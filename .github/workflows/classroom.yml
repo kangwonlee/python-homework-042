@@ -50,8 +50,8 @@ jobs:
           echo "using payload image url : $BUILD_IMAGE_URL"
           echo "image_url=$BUILD_IMAGE_URL" >> $GITHUB_ENV
         else
-          echo "using vars image url : ${{ vars.PYTHON_GRADER_031 }}"
-          echo "image_url=${{ vars.PYTHON_GRADER_031 }}" >> $GITHUB_ENV
+          echo "using vars image url : ${{ vars.PYTHON_GRADER_041 }}"
+          echo "image_url=${{ vars.PYTHON_GRADER_041 }}" >> $GITHUB_ENV
         fi
 
     - name: Log image URL
