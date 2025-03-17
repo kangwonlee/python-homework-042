@@ -1,50 +1,57 @@
-# String Interpolation with Float Inputs and Formatted Operation Outputs<br>부동 소수점 입력과 형식화된 연산 출력으로 문자열 내삽
+# Coin Denomination Calculator Assignment<br>동전 세기
+
 * Exercise File: `exercise.py`<br>실습 파일: `exercise.py`
-* Get two float values from the keyboard using the `input()` function.<br>`input()` 함수를 사용하여 키보드에서 두 개의 부동 소수점 값을 입력받으세요.
-    * Use the following prompts for the `input()`:<br>`input()`에 다음 프롬프트를 사용하세요:
-        * `number 0:`
-        * `number 1:`
-    * Convert the input values to floats using `float()`. The inputs may include decimal numbers (e.g., `3.14`, `-2.5`).<br>`float()`를 사용하여 입력 값을 부동 소수점으로 변환하세요. 입력에는 소수점 숫자가 포함될 수 있습니다 (예: `3.14`, `-2.5`).
-* Perform the following arithmetic operations on the two float values:<br>두 개의 부동 소수점 값에 대해 다음 산술 연산을 수행하세요:
-    * Addition 덧셈 (`+`)
-    * Subtraction 뺄셈 (`-`)
-    * Multiplication 곱셈 (`*`)
-    * Division 나눗셈 (`/`)
-* Display the original variables and the results using **string interpolation** within a `print()` statement for each operation.<br>각 연산에 대해 **문자열 내삽**을 사용하여 원래 변수와 결과를 `print()` 문으로 표시하세요.
-    * Before printing the operations, print a horizontal line of 10 dashes (`----------`) to separate the prompts from the output.<br>연산을 출력하기 전에, 프롬프트와 출력을 구분하기 위해 10개의 대시(`----------`)로 된 수평선을 출력하세요.
-    * Each line must start with an operation label followed by tab characters (`\t`) to align the equations:<br>각 줄은 연산 레이블로 시작하고, 방정식을 정렬하기 위해 탭 문자(`\t`)가 뒤따라야 합니다:
-        * `Addition:\t`
-        * `Subtraction:\t`
-        * `Multiplication:\t`
-        * `Division:\t`
-    * Format all numbers (both input values and the result) using a fixed-width, 3-decimal-place format equivalent to `%8.3f`:<br>모든 숫자(입력 값과 결과 모두)에 `%8.3f` 포맷을 적용하세요:
-        * Total width of 8 characters (including sign, digits, and decimal point).<br>총 8자 폭 (부호, 숫자, 소수점 포함).
-        * Exactly 3 decimal places (e.g., `3.14` becomes `3.140`, `2.5` becomes `2.500`).<br>정확히 3자리 소수점 (예: `3.14`는 `3.140`, `2.5`는 `2.500`).
-    * String interpolation must be implemented using one of the following methods:<br>문자열 내삽은 다음 방법 중 하나를 사용하여 구현해야 합니다:
-        * f-strings
-        * `.format()`
-        * `%`
-    * Concatenation with `+` as below is **not allowed** and will fail the test.<br>아래와 같이 `+`를 사용한 연결은 **허용되지 않으며** 테스트에서 통과되지 않을 것입니다.
-        ```python
-        "Addition:\t" + str(num0) + " + " + str(num1) + " = " + str(num0 + num1)
-        ```
-    * Also using commas (`,`) in `print()` statements for concatenation is **not allowed** and will fail the test.<br>`print()` 문에서 쉼표(`,`)를 사용한 연결 또한 **허용되지 않으며** 테스트에서 통과되지 않을 것입니다.
-        ```python
-        "Addition:\t", num0, "+", num1, "=", num0 + num1
-        ```
-* Use only `print()` and `input()` functions in your code.<br>코드에서 `print()`와 `input()` 함수만 사용하세요.
-* Example Input<br>입력 예시
-```
-3.14
-2.5
-```
-* Example Output<br>출력 예시
-```
-Addition:		3.140 +   2.500 =   5.640
-Subtraction:	3.140 -   2.500 =   0.640
-Multiplication:	3.140 *   2.500 =   7.850
-Division:		3.140 /   2.500 =   1.256
-```
+
+## Overview<br>개요
+
+In this assignment, you will write a Python program to calculate the number of coins needed to represent a given amount of currency.<br>이 과제에서는 주어진 통화 금액을 나타내는 데 필요한 동전의 수를 계산하는 Python 프로그램을 작성할 것입니다.
+
+You will use the `//` (floor division) and `%` (modulo) operators to break down the total amount into specific coin denominations: 500, 100, 50, 10, 5, and 1 units.<br>
+나눗셈의 몫 `//` 와 나머지 `%` 연산자를 사용하여 입력된 금액에 해당하는 500, 100, 50, 10, 5, 1 단위 동전의 갯수를 계산하세요.
+This exercise will help you understand how these operators work and how to apply them in a practical problem.<br>
+이 연습은 이러한 연산자의 작동 방식을 이해하고 실제 문제에 적용하는 데 도움이 될 것입니다.
+
+## Objectives<br>목표
+
+* Learn to use the `//` (floor division) operator to determine how many whole times a number fits into another.<br>`//` (나눗셈의 몫) 연산자를 사용하여 한 숫자가 다른 숫자에 몇 번이나 완전히 들어가는지 알아보세요.
+* Learn to use the `%` (modulo) operator to find the remainder after division.<br>`%` (나머지) 연산자를 사용하여 나눗셈 후 나머지를 구하세요.
+* Practice taking user input and performing calculations in Python.<br>Python에서 사용자 입력을 받고 계산을 수행하는 과정을 연습하세요.
+* Develop problem-solving skills by breaking down a total amount into smaller denominations.<br>총 금액을 더 작은 단위로 나누며 문제 해결 능력을 키우세요.
+
+## Problem Description<br>문제 설명
+Your task is to create a Python program that:<br>이 과제는 다음과 같은 Python 프로그램을 만드는 것입니다:
+
+1. Prompts the user to enter an amount of currency (an integer).<br>사용자에게 통화 금액(정수)을 입력하라는 메시지를 표시합니다.
+1. Calculates how many coins of each denomination (500, 100, 50, 10, 5, and 1) are needed to make up that amount.<br>해당 금액을 구성하는 데 필요한 각 단위 (500, 100, 50, 10, 5, 1) 동전 수를 계산합니다.
+1. Prints the number of coins for each denomination.<br>각 단위별 동전 수를 출력합니다.
+
+### Example<br>예시
+
+* Input 입력: 1237
+* Output 출력:
+  ```
+  500: 2
+  100: 2
+  50: 0
+  10: 3
+  5: 1
+  1: 2
+  ```
+
+## Requirements<br>요구 사항
+
+* Use the input() function to get the currency amount from the user (assume it’s a natural number).<br>input() 함수를 사용하여 사용자에게 통화 금액(자연수로 가정)을 입력받으세요.
+* Use the `//` operator to calculate the number of coins for each denomination.<br>`//` 연산자를 사용하여 각 단위의 동전 수를 계산하세요.
+* Use the `%` operator to calculate the remaining amount after each step.<br>`%` 연산자를 사용하여 각 단계 후 남은 금액을 계산하세요.
+* Process the denominations in this order: 500, 100, 50, 10, 5, 1.<br>단위를 다음 순서로 처리하세요: 500, 100, 50, 10, 5, 1.
+* Display the results clearly, showing the number of coins for each denomination.<br>각 단위별 동전 수를 알기 쉽게 표시하세요.
+* Your program should work for any natural number input.<br>프로그램은 모든 자연수 입력에 대해 작동해야 합니다.
+
+## Hints<br>힌트
+
+* Start with the largest denomination (500) and work your way down to the smallest (1).<br>가장 큰 단위(500)부터 시작하여 가장 작은 단위(1)까지 진행하세요.
+* After calculating the number of coins for a denomination, subtract that amount from the total before moving to the next denomination.<br>한 단위의 동전 수를 계산한 후, 다음 단위로 넘어가기 전에 그 금액을 총액에서 빼세요.
+* Use variables to keep track of the remaining amount after each step.<br>각 단계 후 남은 액수를 저장하기 위해 변수를 사용하세요.
 
 ## Grading Criteria<br>채점 기준
 
