@@ -1,57 +1,59 @@
-# Coin Denomination Calculator Assignment<br>동전 세기
+# Bit Operator Assignment<br>비트 연산자 과제
 
-* Exercise File: `exercise.py`<br>실습 파일: `exercise.py`
+## Purpose<br>목적:
+This assignment helps you explore Python’s bit operators by reading a bit of a specific location from an integer and displaying its binary representation. Let's practice taking user input, using bitwise operations, and formatting output.<br>이 과제는 이진수로 저장된 정수의 특정 위치의 비트를 읽고 그 값을 표시함으로써 Python의 비트 연산자를 이해하는 데 도움이 될 것입니다. 사용자 입력, 비트 연산, 출력 형식을 연습해 봅시다.
 
-## Overview<br>개요
+Also let's try to understand why almost everying in this class starts from 0 instead of 1.<br>그리고 이 강의에서 왜 대부분의 것이 1이 아닌 0부터 시작하는지 이해해 봅시다.
+## Description: <br>설명:
+Write a Python program that:<br>다음과 같은 Python 프로그램을 작성하세요:
 
-In this assignment, you will write a Python program to calculate the number of coins needed to represent a given amount of currency.<br>이 과제에서는 주어진 통화 금액을 나타내는 데 필요한 동전의 수를 계산하는 Python 프로그램을 작성할 것입니다.
+1. Prompts the user to enter an integer `i` (`0 <= i < 256`).<br>사용자에게 정수 `i` (`0 <= i < 256`)를 입력하라는 메시지를 표시합니다.
+1. Prompts the user to enter a bit position `j` (`0 <= j < 8`).<br>사용자에게 비트 위치 `j` (`0 <= j < 8`)를 입력하라는 메시지를 표시합니다.
+1. Print a line of 10 dashes (`-`) to separate the input from the output.<br>입력과 출력을 구분하기 위해 10개의 대시(`-`)로 구분된 줄을 출력합니다.
+1. Prints the binary representation of `i` as an 8-bit string (e.g., "00000101" for 5).<br>`i`의 이진 표현을 8비트 문자열로 출력합니다 (예: 5의 경우 "00000101").
+1. Prints the "bit mask" used in the bit operation to extract the `j`'th bit.<br>`j`번째 비트를 추출하는 데 사용된 "비트 마스크"를 출력합니다.
+1. Extracts and prints the value (`0` or `1`) of the `j`'th bit of `i`.<br>`i`의 `j`번째 비트 값(0 또는 1)을 추출하여 출력합니다.
 
-You will use the `//` (floor division) and `%` (modulo) operators to break down the total amount into specific coin denominations: 500, 100, 50, 10, 5, and 1 units.<br>
-나눗셈의 몫 `//` 와 나머지 `%` 연산자를 사용하여 입력된 금액에 해당하는 500, 100, 50, 10, 5, 1 단위 동전의 갯수를 계산하세요.
-This exercise will help you understand how these operators work and how to apply them in a practical problem.<br>
-이 연습은 이러한 연산자의 작동 방식을 이해하고 실제 문제에 적용하는 데 도움이 될 것입니다.
+## Instructions:<br>지침:
+* Use `input()` to get `i` and `j` from the user. Convert the inputs to integers with int().<br>`input()`을 사용하여 사용자에게 `i`와 `j`를 입력받습니다. 입력값을 `int()`로 정수로 변환합니다.
+* To find the `j`'th bit:<br>`j`번째 비트를 찾으려면:
+    * Initialize another variable `k` with `1`. Let's call this "bit mask".<br>다른 변수 `k`를 `1`로 초기화합니다. 이 변수를 "비트 마스크" 라고 부릅시다.
+    * Shift `k` left by `j` to get a value with only the `j`'th bit set.<br>`j`번째 비트에 설정된 값만을 읽을 수 있도록 `k`를 `j` 만큼 왼쪽으로 이동시킵니다.
+    * Using the bit operation `i & k` get the `j`th bit’s value.<br> `i & k` 비트 연산으로 `j` 번째 비트 값을 얻습니다.
+* Using f-string, indicate the binary form of `i`. Allocate at least 8 seats and pad the empty seats with `0`.<br>f-string을 사용하여 `i`의 이진 형태를 나타냅니다. 최소 8자리를 확보하고 빈자리는 `0`으로 채웁니다.
+* In the same way, print the bit mask used in your bit operation.<br>같은 방식으로 비트 연산에 사용된 비트 마스크를 출력합니다.
+* We will not validate input yet.<br>입력이 유효한지는 이 과제에서는 아직 검사하지 않겠습니다.
 
-## Objectives<br>목표
+## 8 Bit Position Table:<br>8 비트 위치 표:
+|          | MSB |     |     |     |     |     |     | LSB |
+|:---------------------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| Bit Position (j)<br>비트 위치 (j) | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
+| Bit Value (for 19)<br>비트 값 (19의 경우)  | 0   | 0   | 0   | 1   | 0   | 0   | 1   | 1   |
 
-* Learn to use the `//` (floor division) operator to determine how many whole times a number fits into another.<br>`//` (나눗셈의 몫) 연산자를 사용하여 한 숫자가 다른 숫자에 몇 번이나 완전히 들어가는지 알아보세요.
-* Learn to use the `%` (modulo) operator to find the remainder after division.<br>`%` (나머지) 연산자를 사용하여 나눗셈 후 나머지를 구하세요.
-* Practice taking user input and performing calculations in Python.<br>Python에서 사용자 입력을 받고 계산을 수행하는 과정을 연습하세요.
-* Develop problem-solving skills by breaking down a total amount into smaller denominations.<br>총 금액을 더 작은 단위로 나누며 문제 해결 능력을 키우세요.
+MSB = Most Significant Bit (leftmost), LSB = Least Significant Bit (rightmost).<br>MSB = 최상위 비트 (가장 왼쪽), LSB = 최하위 비트 (가장 오른쪽).
 
-## Problem Description<br>문제 설명
-Your task is to create a Python program that:<br>이 과제는 다음과 같은 Python 프로그램을 만드는 것입니다:
+## Example Run:<br>실행 예시:
 
-1. Prompts the user to enter an amount of currency (an integer).<br>사용자에게 통화 금액(정수)을 입력하라는 메시지를 표시합니다.
-1. Calculates how many coins of each denomination (500, 100, 50, 10, 5, and 1) are needed to make up that amount.<br>해당 금액을 구성하는 데 필요한 각 단위 (500, 100, 50, 10, 5, 1) 동전 수를 계산합니다.
-1. Prints the number of coins for each denomination.<br>각 단위별 동전 수를 출력합니다.
+* input
+```
+Enter an integer (0-255): 19
+Enter bit position (0-7): 2
+```
+* output
+```
+----------
+00010011 : binary representation of 19
+00000100 : bit mask for position 2
+0 : bit value of 19 at position 2
+```
 
-### Example<br>예시
+## Tips:<br>팁:
 
-* Input 입력: 1237
-* Output 출력:
-  ```
-  500: 2
-  100: 2
-  50: 0
-  10: 3
-  5: 1
-  1: 2
-  ```
+* Experiment with different values of `i` and `j` to see how the bits change.<br>`i`와 `j`의 다양한 값을 실험하여 비트가 어떻게 변하는지 확인하세요.
+* Use `print()` statements to make your output readable.<br>`print()` 문을 사용하여 출력을 읽기 쉽게 만드세요.
+* Ask your instructor if you’re unsure about bit positions.<br>비트 위치에 대해 확신이 없으면 강사에게 문의하세요.
 
-## Requirements<br>요구 사항
-
-* Use the input() function to get the currency amount from the user (assume it’s a natural number).<br>input() 함수를 사용하여 사용자에게 통화 금액(자연수로 가정)을 입력받으세요.
-* Use the `//` operator to calculate the number of coins for each denomination.<br>`//` 연산자를 사용하여 각 단위의 동전 수를 계산하세요.
-* Use the `%` operator to calculate the remaining amount after each step.<br>`%` 연산자를 사용하여 각 단계 후 남은 금액을 계산하세요.
-* Process the denominations in this order: 500, 100, 50, 10, 5, 1.<br>단위를 다음 순서로 처리하세요: 500, 100, 50, 10, 5, 1.
-* Display the results clearly, showing the number of coins for each denomination.<br>각 단위별 동전 수를 알기 쉽게 표시하세요.
-* Your program should work for any natural number input.<br>프로그램은 모든 자연수 입력에 대해 작동해야 합니다.
-
-## Hints<br>힌트
-
-* Start with the largest denomination (500) and work your way down to the smallest (1).<br>가장 큰 단위(500)부터 시작하여 가장 작은 단위(1)까지 진행하세요.
-* After calculating the number of coins for a denomination, subtract that amount from the total before moving to the next denomination.<br>한 단위의 동전 수를 계산한 후, 다음 단위로 넘어가기 전에 그 금액을 총액에서 빼세요.
-* Use variables to keep track of the remaining amount after each step.<br>각 단계 후 남은 액수를 저장하기 위해 변수를 사용하세요.
+__Happy coding! 즐거운 코딩!__
 
 ## Grading Criteria<br>채점 기준
 
