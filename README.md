@@ -12,7 +12,7 @@ Write a Python program that:<br>다음과 같은 Python 프로그램을 작성�
 1. Print a line of 10 dashes (`-`) to separate the input from the output.<br>입력과 출력을 구분하기 위해 10개의 대시(`-`)로 구분된 줄을 출력합니다.
 1. Prints the binary representation of `i` as an 8-bit string (e.g., "00000101" for 5).<br>`i`의 이진 표현을 8비트 문자열로 출력합니다 (예: 5의 경우 "00000101").
 1. Prints the "bit mask" used in the bit operation to extract the `j`'th bit.<br>`j`번째 비트를 추출하는 데 사용된 "비트 마스크"를 출력합니다.
-1. Extracts and prints the value (`0` or `1`) of the `j`'th bit of `i`.<br>`i`의 `j`번째 비트 값(0 또는 1)을 추출하여 출력합니다.
+1. Extracts and prints whether the value of the `j`'th bit of `i` is larger than 0. (hint: comparison operator)<br>`i`의 `j`번째 비트 값(0 또는 1)을 추출하여 0보다 큰지 여부를 출력합니다.(힌트: 비교 연산자)
 
 ## Instructions:<br>지침:
 * Use `input()` to get `i` and `j` from the user. Convert the inputs to integers with int().<br>`input()`을 사용하여 사용자에게 `i`와 `j`를 입력받습니다. 입력값을 `int()`로 정수로 변환합니다.
@@ -44,7 +44,7 @@ Enter bit position (0-7): 2
 ----------
 00010011 : binary representation of 19
 00000100 : bit mask for position 2
-0 : bit value of 19 at position 2
+Is bit value of 19 at position 2 larger than 0? True
 ```
 
 ## Tips:<br>팁:
