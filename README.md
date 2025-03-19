@@ -3,7 +3,7 @@
 ## Purpose<br>목적:
 This assignment helps you explore Python’s bit operators by reading a bit of a specific location from an integer and displaying its binary representation. Let's practice taking user input, using bitwise operations, and formatting output.<br>이 과제는 이진수로 저장된 정수의 특정 위치의 비트를 읽고 그 값을 표시함으로써 Python의 비트 연산자를 이해하는 데 도움이 될 것입니다. 사용자 입력, 비트 연산, 출력 형식을 연습해 봅시다.
 
-Also let's try to understand why almost everying in this class starts from 0 instead of 1.<br>그리고 이 강의에서 왜 대부분의 것이 1이 아닌 0부터 시작하는지 이해해 봅시다.
+Also let's try to understand why almost everything in this class starts from 0 instead of 1.<br>그리고 이 강의에서 왜 대부분의 것이 1이 아닌 0부터 시작하는지 이해해 봅시다.
 ## Description: <br>설명:
 Write a Python program that:<br>다음과 같은 Python 프로그램을 작성하세요:
 
@@ -19,7 +19,7 @@ Write a Python program that:<br>다음과 같은 Python 프로그램을 작성�
 * To find the `j`'th bit:<br>`j`번째 비트를 찾으려면:
     * Initialize another variable `k` with `1`. Let's call this "bit mask".<br>다른 변수 `k`를 `1`로 초기화합니다. 이 변수를 "비트 마스크" 라고 부릅시다.
     * Shift `k` left by `j` to get a value with only the `j`'th bit set.<br>`j`번째 비트에 설정된 값만을 읽을 수 있도록 `k`를 `j` 만큼 왼쪽으로 이동시킵니다.
-    * Using the bit operation `i & k` get the `j`th bit’s value.<br> `i & k` 비트 연산으로 `j` 번째 비트 값을 얻습니다.
+    * Whether the bit operation `i & k` result is larger than `0` will give us the `j`th bit’s value.<br> `i & k` 비트 연산결과가 0 보다 큰지 비교하여 `j` 번째 비트 값을 얻습니다.
 * Using f-string, indicate the binary form of `i`. Allocate at least 8 seats and pad the empty seats with `0`.<br>f-string을 사용하여 `i`의 이진 형태를 나타냅니다. 최소 8자리를 확보하고 빈자리는 `0`으로 채웁니다.
 * In the same way, print the bit mask used in your bit operation.<br>같은 방식으로 비트 연산에 사용된 비트 마스크를 출력합니다.
 * We will not validate input yet.<br>입력이 유효한지는 이 과제에서는 아직 검사하지 않겠습니다.
@@ -44,7 +44,7 @@ Enter bit position (0-7): 2
 ----------
 00010011 : binary representation of 19
 00000100 : bit mask for position 2
-Is bit value of 19 at position 2 larger than 0? True
+Is bit value of 19 at position 2 larger than 0? False
 ```
 
 ## Tips:<br>팁:
