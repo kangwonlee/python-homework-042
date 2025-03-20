@@ -12,14 +12,14 @@ Write a Python program that:<br>다음과 같은 Python 프로그램을 작성�
 1. Print a line of 10 dashes (`-`) to separate the input from the output.<br>입력과 출력을 구분하기 위해 10개의 대시(`-`)로 구분된 줄을 출력합니다.
 1. Prints the binary representation of `i` as an 8-bit string (e.g., "00000101" for 5).<br>`i`의 이진 표현을 8비트 문자열로 출력합니다 (예: 5의 경우 "00000101").
 1. Prints the "bit mask" used in the bit operation to extract the `j`'th bit.<br>`j`번째 비트를 추출하는 데 사용된 "비트 마스크"를 출력합니다.
-1. Extracts and prints whether the value of the `j`'th bit of `i` is larger than 0. (hint: comparison operator)<br>`i`의 `j`번째 비트 값(0 또는 1)을 추출하여 0보다 큰지 여부를 출력합니다.(힌트: 비교 연산자)
+1. Prints whether the `j`'th bit of `i` is on (hint: comparison operator).<br>`i`의 `j`번째 비트가 켜져 있는지 출력합니다 (힌트: 비교 연산자).
 
 ## Instructions:<br>지침:
 * Use `input()` to get `i` and `j` from the user. Convert the inputs to integers with int().<br>`input()`을 사용하여 사용자에게 `i`와 `j`를 입력받습니다. 입력값을 `int()`로 정수로 변환합니다.
 * To find the `j`'th bit:<br>`j`번째 비트를 찾으려면:
     * Initialize another variable `k` with `1`. Let's call this "bit mask".<br>다른 변수 `k`를 `1`로 초기화합니다. 이 변수를 "비트 마스크" 라고 부릅시다.
     * Shift `k` left by `j` to get a value with only the `j`'th bit set.<br>`j`번째 비트에 설정된 값만을 읽을 수 있도록 `k`를 `j` 만큼 왼쪽으로 이동시킵니다.
-    * Whether the bit operation `i & k` result is larger than `0` will give us the `j`th bit’s value.<br> `i & k` 비트 연산결과가 0 보다 큰지 비교하여 `j` 번째 비트 값을 얻습니다.
+    * Whether the bit operation `i & k` result is greater than `0` will tell us if the `j`th bit is on.<br>`i & k` 비트 연산 결과가 `0`보다 큰지 여부로 `j`번째 비트가 켜져 있는지 알 수 있습니다.
 * Using f-string, indicate the binary form of `i`. Allocate at least 8 seats and pad the empty seats with `0`.<br>f-string을 사용하여 `i`의 이진 형태를 나타냅니다. 최소 8자리를 확보하고 빈자리는 `0`으로 채웁니다.
 * In the same way, print the bit mask used in your bit operation.<br>같은 방식으로 비트 연산에 사용된 비트 마스크를 출력합니다.
 * We will not validate input yet.<br>입력이 유효한지는 이 과제에서는 아직 검사하지 않겠습니다.
@@ -44,7 +44,7 @@ Enter bit position (0-7): 2
 ----------
 00010011 : binary representation of 19
 00000100 : bit mask for position 2
-Is bit value of 19 at position 2 larger than 0? False
+Is bit of 19 at position 2 on? False
 ```
 
 ## Tips:<br>팁:
