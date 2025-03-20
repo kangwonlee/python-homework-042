@@ -28,7 +28,7 @@ Write a Python program that:<br>다음과 같은 Python 프로그램을 작성�
 ## 8 Bit Position Table:<br>8 비트 위치 표:
 |          | MSB |     |     |     |     |     |     | LSB |
 |:---------------------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| Bit Position (j)<br>비트 위치 (j) | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
+| Bit Position (`j`)<br>비트 위치 (`j`) | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
 | Bit Value (for 19)<br>비트 값 (19의 경우)  | 0   | 0   | 0   | 1   | 0   | 0   | 1   | 1   |
 
 MSB = Most Significant Bit (leftmost), LSB = Least Significant Bit (rightmost).<br>MSB = 최상위 비트 (가장 왼쪽), LSB = 최하위 비트 (가장 오른쪽).
