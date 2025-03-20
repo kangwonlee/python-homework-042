@@ -7,12 +7,13 @@ Also let's try to understand why almost everything in this class starts from 0 i
 ## Description: <br>설명:
 Write a Python program that:<br>다음과 같은 Python 프로그램을 작성하세요:
 
+1. For convenience, variable names will be `i`, `j`, and `k` but you may use differnet names.<br>편의상 변수 이름은 `i`, `j`, `k`로 사용하지만 다른 이름을 사용할 수 있습니다.
 1. Prompts the user to enter an integer `i` (`0 <= i < 256`).<br>사용자에게 정수 `i` (`0 <= i < 256`)를 입력하라는 메시지를 표시합니다.
 1. Prompts the user to enter a bit position `j` (`0 <= j < 8`).<br>사용자에게 비트 위치 `j` (`0 <= j < 8`)를 입력하라는 메시지를 표시합니다.
 1. Print a line of 10 dashes (`-`) to separate the input from the output.<br>입력과 출력을 구분하기 위해 10개의 대시(`-`)로 구분된 줄을 출력합니다.
 1. Prints the binary representation of `i` as an 8-bit string (e.g., "00000101" for 5).<br>`i`의 이진 표현을 8비트 문자열로 출력합니다 (예: 5의 경우 "00000101").
-1. Prints the "bit mask" used in the bit operation to extract the `j`'th bit.<br>`j`번째 비트를 추출하는 데 사용된 "비트 마스크"를 출력합니다.
-1. Prints whether the `j`'th bit of `i` is on (hint: comparison operator).<br>`i`의 `j`번째 비트가 켜져 있는지 출력합니다 (힌트: 비교 연산자).
+1. Prints `k`, the ‘bit mask,’ with the bit at position `j` on(1) and all other bits off(0), the same way.<br>`j` 위치의 비트는 켜져 있고 나머지는 모두 꺼져 있는 "비트 마스크" `k` 를 같은 방식으로 출력합니다.
+1. Prints whether the bit of `i` at position `j` is on(1) (hint: comparison operator).<br>`i`의 `j`위치의 비트가 켜져 있는지 (1 인지) 여부를 출력합니다 (힌트: 비교 연산자).
 
 ## Instructions:<br>지침:
 * Use `input()` to get `i` and `j` from the user. Convert the inputs to integers with int().<br>`input()`을 사용하여 사용자에게 `i`와 `j`를 입력받습니다. 입력값을 `int()`로 정수로 변환합니다.
